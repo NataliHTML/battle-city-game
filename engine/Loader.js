@@ -32,8 +32,8 @@
 
 			for (const jsonData of this.loadOrder.jsons) {
 				const { name, address } = jsonData
-				const promise = Loader.loadJson(address).then(image => {
-					this.resources.jsons[name] = image
+				const promise = Loader.loadJson(address).then(json => {
+					this.resources.jsons[name] = json
 					if (this.loadOrder.jsons.includes(jsonData)) {
 						const index = this.loadOrder.jsons.indexOf(jsonData)
 						this.loadOrder.jsons.splice(index, 1)
